@@ -52,3 +52,4 @@ public final class DecimalOptReaderConst extends ConstantFieldReader implements 
         dest.setVal( read( decoder, mapReader ) );
     }
 }
+
