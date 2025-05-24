@@ -1,0 +1,12 @@
+# Eclipse specific
+.classpath
+.project
+.settings/
+
+# Output directory
+bin/
+
+# Temporary directories for migration
+src_orig/
+other_orig/
+test_orig/
