@@ -71,7 +71,7 @@ public final class FixEncodeBuilderImpl extends BaseFixEncodeBuilderImpl {
     private void encodeFixHeader() {
 
         //           1         2
-        // 012345678901234567890123
+        // 0123456789012345678901234
         // 8=FIX.4.2;9=0000;35=D
 
         final int saved = _idx;
