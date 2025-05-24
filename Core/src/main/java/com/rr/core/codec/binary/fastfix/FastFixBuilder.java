@@ -557,7 +557,7 @@ public final class FastFixBuilder implements BinaryEncodeBuilder {
 
         switch( len ) {
         case 10: 
-            byte d = (byte) (((value >>> 63) & FastFixUtils.OVERFLOW_MSB_BIT_MASK & firstByteMask));
+            byte d = (byte) (((value >> 63) & FastFixUtils.OVERFLOW_MSB_BIT_MASK & firstByteMask));
             
             if ( overflow ) {
                 d  |= FastFixUtils.OVERFLOW_BIT;
@@ -593,7 +593,7 @@ public final class FastFixBuilder implements BinaryEncodeBuilder {
 
         switch( len ) {
         case 10: 
-            byte d = (byte) (((value >>> 63) & FastFixUtils.OVERFLOW_MSB_BIT_MASK));
+            byte d = (byte) (((value >> 63) & FastFixUtils.OVERFLOW_MSB_BIT_MASK));
             
             if ( overflow ) {
                 d  |= FastFixUtils.OVERFLOW_BIT;
@@ -602,21 +602,21 @@ public final class FastFixBuilder implements BinaryEncodeBuilder {
             _buffer[_idx++] = d;
             
             //$FALL-THROUGH$
-        case 9:  _buffer[_idx++] = (byte)((value >>> 56) & FastFixUtils.DATA_BIT_MASK);
+        case 9:  _buffer[_idx++] = (byte)((value >> 56) & FastFixUtils.DATA_BIT_MASK);
             //$FALL-THROUGH$
-        case 8:  _buffer[_idx++] = (byte)((value >>> 49) & FastFixUtils.DATA_BIT_MASK);
+        case 8:  _buffer[_idx++] = (byte)((value >> 49) & FastFixUtils.DATA_BIT_MASK);
             //$FALL-THROUGH$
-        case 7:  _buffer[_idx++] = (byte)((value >>> 42) & FastFixUtils.DATA_BIT_MASK);
+        case 7:  _buffer[_idx++] = (byte)((value >> 42) & FastFixUtils.DATA_BIT_MASK);
             //$FALL-THROUGH$
-        case 6:  _buffer[_idx++] = (byte)((value >>> 35) & FastFixUtils.DATA_BIT_MASK);
+        case 6:  _buffer[_idx++] = (byte)((value >> 35) & FastFixUtils.DATA_BIT_MASK);
             //$FALL-THROUGH$
-        case 5:  _buffer[_idx++] = (byte)((value >>> 28) & FastFixUtils.DATA_BIT_MASK);
+        case 5:  _buffer[_idx++] = (byte)((value >> 28) & FastFixUtils.DATA_BIT_MASK);
             //$FALL-THROUGH$
-        case 4:  _buffer[_idx++] = (byte)((value >>> 21) & FastFixUtils.DATA_BIT_MASK);
+        case 4:  _buffer[_idx++] = (byte)((value >> 21) & FastFixUtils.DATA_BIT_MASK);
             //$FALL-THROUGH$
-        case 3:  _buffer[_idx++] = (byte)((value >>> 14) & FastFixUtils.DATA_BIT_MASK);
+        case 3:  _buffer[_idx++] = (byte)((value >> 14) & FastFixUtils.DATA_BIT_MASK);
             //$FALL-THROUGH$
-        case 2:  _buffer[_idx++] = (byte)((value >>> 7)  & FastFixUtils.DATA_BIT_MASK);
+        case 2:  _buffer[_idx++] = (byte)((value >> 7)  & FastFixUtils.DATA_BIT_MASK);
             //$FALL-THROUGH$
         case 1:  _buffer[_idx++] = (byte)((value & FastFixUtils.DATA_BIT_MASK) | FastFixUtils.STOP_BIT);
             break;
@@ -645,7 +645,7 @@ public final class FastFixBuilder implements BinaryEncodeBuilder {
 
         switch( len ) {
         case 5: 
-            byte d = (byte) (((value >>> 28) & FastFixUtils.OVERFLOW_MSB_BIT_MASK & firstByteMask));
+            byte d = (byte) (((value >> 28) & FastFixUtils.OVERFLOW_MSB_BIT_MASK & firstByteMask));
             
             if ( overflow ) {
                 d  |= FastFixUtils.OVERFLOW_BIT;
@@ -653,11 +653,11 @@ public final class FastFixBuilder implements BinaryEncodeBuilder {
             
             _buffer[_idx++] = d;
             //$FALL-THROUGH$
-        case 4:  _buffer[_idx++] = (byte)((value >>> 21) & FastFixUtils.DATA_BIT_MASK);
+        case 4:  _buffer[_idx++] = (byte)((value >> 21) & FastFixUtils.DATA_BIT_MASK);
             //$FALL-THROUGH$
-        case 3:  _buffer[_idx++] = (byte)((value >>> 14) & FastFixUtils.DATA_BIT_MASK);
+        case 3:  _buffer[_idx++] = (byte)((value >> 14) & FastFixUtils.DATA_BIT_MASK);
             //$FALL-THROUGH$
-        case 2:  _buffer[_idx++] = (byte)((value >>> 7)  & FastFixUtils.DATA_BIT_MASK);
+        case 2:  _buffer[_idx++] = (byte)((value >> 7)  & FastFixUtils.DATA_BIT_MASK);
             //$FALL-THROUGH$
         case 1:  _buffer[_idx++] = (byte)((value & FastFixUtils.DATA_BIT_MASK) | FastFixUtils.STOP_BIT);
             break;
@@ -670,7 +670,7 @@ public final class FastFixBuilder implements BinaryEncodeBuilder {
 
         switch( len ) {
         case 5: 
-            byte d = (byte) (((value >>> 28) & FastFixUtils.OVERFLOW_MSB_BIT_MASK));
+            byte d = (byte) (((value >> 28) & FastFixUtils.OVERFLOW_MSB_BIT_MASK));
             
             if ( overflow ) {
                 d  |= FastFixUtils.OVERFLOW_BIT;
@@ -679,11 +679,11 @@ public final class FastFixBuilder implements BinaryEncodeBuilder {
             _buffer[_idx++] = d;
             
             //$FALL-THROUGH$
-        case 4:  _buffer[_idx++] = (byte)((value >>> 21) & FastFixUtils.DATA_BIT_MASK);
+        case 4:  _buffer[_idx++] = (byte)((value >> 21) & FastFixUtils.DATA_BIT_MASK);
             //$FALL-THROUGH$
-        case 3:  _buffer[_idx++] = (byte)((value >>> 14) & FastFixUtils.DATA_BIT_MASK);
+        case 3:  _buffer[_idx++] = (byte)((value >> 14) & FastFixUtils.DATA_BIT_MASK);
             //$FALL-THROUGH$
-        case 2:  _buffer[_idx++] = (byte)((value >>> 7)  & FastFixUtils.DATA_BIT_MASK);
+        case 2:  _buffer[_idx++] = (byte)((value >> 7)  & FastFixUtils.DATA_BIT_MASK);
             //$FALL-THROUGH$
         case 1:  _buffer[_idx++] = (byte)((value & FastFixUtils.DATA_BIT_MASK) | FastFixUtils.STOP_BIT);
             break;
