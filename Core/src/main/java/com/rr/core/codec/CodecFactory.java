@@ -108,4 +108,3 @@ public class CodecFactory implements SMTComponent {
         return decoder;
     }
 }
-

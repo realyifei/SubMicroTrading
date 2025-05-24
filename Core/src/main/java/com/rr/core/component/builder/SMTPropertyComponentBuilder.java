@@ -73,7 +73,7 @@ import com.rr.core.utils.SMTRuntimeException;
     component.componentId2.arg.2.type=int
     component.componentId2.arg.2.value=99
      # example of property set via reflection after instantiation
-    component.componentId2.properties.someProperty=someValue
+    component.componentId1.properties.someProperty=someValue
 *    
 * format for COMPONENT property identifiers is 
 * component.{componentId}.[className|loader]  
